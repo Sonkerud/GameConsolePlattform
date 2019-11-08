@@ -16,8 +16,9 @@ namespace GameConsolePlattform
             while (true)
             {
 
-                Movement.Movement.MoveCharacter();
-               
+                
+                    Movement.Movement.MoveCharacter();
+                
                 Thread.Sleep(100);
             }
          

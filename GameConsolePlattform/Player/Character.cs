@@ -30,8 +30,6 @@ namespace GameConsolePlattform.Player
             CharacterArr[2, 1] = "/";
             CharacterArr[2, 3] = "\\";
             return CharacterArr;
-
-            
         }
         public static void BuildEmptyCharacter(int x, int y)
         {

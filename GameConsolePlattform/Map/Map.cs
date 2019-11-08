@@ -1,4 +1,5 @@
-﻿using System; 
+﻿using GameConsolePlattform.Movement;
+using System; 
 using System.Collections.Generic;
 using System.Text;
 
@@ -18,14 +19,30 @@ namespace GameConsolePlattform.Map
                 }
             }
 
-            playingField[17, 42] = "@";
-            playingField[17, 43] = ">";
+            for (int i = 0; i < playingField.GetLength(0); i++)
+            {
+               
+                    playingField[18, 60] = ".";
+                    playingField[19, 60] = ".";
+
+                    playingField[16, 20] = ".";
+                    playingField[17, 20] = ".";
+
+                    playingField[18, 20] = ".";
+                    playingField[19, 20] = ".";
+
+
+            }
+
+
+            playingField[Movement.Movement.playerPositionY, Movement.Movement.playerPositionX] = "@";
+            //playingField[17, 43] = ">";
    
             //playingField[18, 40] = "-";
             //playingField[18, 41] = "-";
             //playingField[18, 43] = "-";
             //playingField[18, 44] = "-";
-            //playingField[18, 42] = "0";
+            playingField[Movement.Movement.playerPositionY+1, Movement.Movement.playerPositionX] = "0";
 
             //playingField[19, 41] = "/";
             //playingField[19, 43] = "\\";
@@ -48,7 +65,6 @@ namespace GameConsolePlattform.Map
             {
                 Console.Write(strArr[16, i]);
             }
-
             Console.SetCursorPosition(2, 21);
             for (int i = 0; i < strArr.GetLength(1); i++)
             {
