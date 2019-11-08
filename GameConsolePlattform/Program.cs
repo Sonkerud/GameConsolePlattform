@@ -10,7 +10,7 @@ namespace GameConsolePlattform
         static void Main(string[] args)
         {
             Map.Map.BuildFrame();
-            Map.Map.BuildGround();
+            //Map.Map.BuildGround();
             Map.Map.BuildPlayingfield();
             Map.Map.DrawPlayingField(Map.Map.playingField);
             while (true)
@@ -18,6 +18,7 @@ namespace GameConsolePlattform
 
                 
                     Movement.Movement.MoveCharacter();
+               
                 
                 Thread.Sleep(100);
             }

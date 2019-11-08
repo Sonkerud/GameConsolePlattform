@@ -7,7 +7,7 @@ namespace GameConsolePlattform.Map
 {
     public class Map
     {
-        public static string[,] playingField = new string[20,112]; 
+        public static string[,] playingField = new string[25,112]; 
 
         public static void BuildPlayingfield()
         {
@@ -19,17 +19,29 @@ namespace GameConsolePlattform.Map
                 }
             }
 
+            for (int i = 0; i < playingField.GetLength(1); i++)
+            {
+                playingField[20,i] = "T";
+            }
+
+            //Hinder
             for (int i = 0; i < playingField.GetLength(0); i++)
             {
                
                     playingField[18, 60] = ".";
                     playingField[19, 60] = ".";
 
+                    playingField[18, 21] = ".";
+                    playingField[19, 21] = ".";
+
                     playingField[16, 20] = ".";
                     playingField[17, 20] = ".";
 
                     playingField[18, 20] = ".";
                     playingField[19, 20] = ".";
+
+                    playingField[14, 19] = "O";
+
 
 
             }
@@ -50,6 +62,31 @@ namespace GameConsolePlattform.Map
         }
         public static void DrawPlayingField(string[,] strArr)
         {
+            Console.SetCursorPosition(2, 13);
+            for (int i = 0; i < strArr.GetLength(1); i++)
+            {
+                Console.Write(strArr[9, i]);
+            }
+            Console.SetCursorPosition(2, 14);
+            for (int i = 0; i < strArr.GetLength(1); i++)
+            {
+                Console.Write(strArr[10, i]);
+            }
+            Console.SetCursorPosition(2, 15);
+            for (int i = 0; i < strArr.GetLength(1); i++)
+            {
+                Console.Write(strArr[11, i]);
+            }
+            Console.SetCursorPosition(2, 16);
+            for (int i = 0; i < strArr.GetLength(1); i++)
+            {
+                Console.Write(strArr[12, i]);
+            }
+            Console.SetCursorPosition(2, 17);
+            for (int i = 0; i < strArr.GetLength(1); i++)
+            {
+                Console.Write(strArr[13, i]);
+            }
             Console.SetCursorPosition(2, 18);
             for (int i = 0; i < strArr.GetLength(1); i++)
             {
@@ -80,6 +117,12 @@ namespace GameConsolePlattform.Map
             {
                 Console.Write(strArr[19, i]);
             }
+            Console.SetCursorPosition(2, 24);
+            for (int i = 0; i < strArr.GetLength(1); i++)
+            {
+                Console.Write(strArr[20, i]);
+            }
+            Console.SetCursorPosition(116,28);
         }
 
         public static void BuildFrame()
