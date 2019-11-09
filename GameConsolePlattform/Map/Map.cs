@@ -9,7 +9,7 @@ namespace GameConsolePlattform.Map
     {
         public static string[,] playingField = new string[25,112]; 
 
-        public static void BuildPlayingfield()
+        public static void BuildPlayingfield(string head, string body)
         {
             for (int i = 0; i < playingField.GetLength(0); i++)
             {
@@ -28,103 +28,46 @@ namespace GameConsolePlattform.Map
             for (int i = 0; i < playingField.GetLength(0); i++)
             {
                
-                    playingField[18, 60] = ".";
-                    playingField[19, 60] = ".";
+                    playingField[18, 60] = "X";
+                    playingField[19, 60] = "X";
 
-                    playingField[18, 21] = ".";
-                    playingField[19, 21] = ".";
+                    playingField[18, 19] = "X";
+                    playingField[19, 19] = "X";
 
-                    playingField[16, 20] = ".";
-                    playingField[17, 20] = ".";
+                    playingField[16, 20] = "X";
+                    playingField[17, 20] = "X";
 
-                    playingField[18, 20] = ".";
-                    playingField[19, 20] = ".";
+                    playingField[18, 20] = "X";
+                    playingField[19, 20] = "X";
 
-                    playingField[14, 19] = "O";
+                    playingField[14, 21] = "O";
 
 
 
             }
 
-
-            playingField[Movement.Movement.playerPositionY, Movement.Movement.playerPositionX] = "@";
-            //playingField[17, 43] = ">";
-   
-            //playingField[18, 40] = "-";
-            //playingField[18, 41] = "-";
-            //playingField[18, 43] = "-";
-            //playingField[18, 44] = "-";
-            playingField[Movement.Movement.playerPositionY+1, Movement.Movement.playerPositionX] = "0";
-
-            //playingField[19, 41] = "/";
-            //playingField[19, 43] = "\\";
+            BuildCharacterInMapArray(head,body);
 
         }
         public static void DrawPlayingField(string[,] strArr)
         {
-            Console.SetCursorPosition(2, 13);
-            for (int i = 0; i < strArr.GetLength(1); i++)
+
+            for (int i = 0; i < strArr.GetLength(0)-2; i++)
             {
-                Console.Write(strArr[9, i]);
+                Console.SetCursorPosition(2, i + 3);
+                for (int z = 0; z < strArr.GetLength(1); z++)
+                {
+                    Console.Write(strArr[i, z]);
+                }
             }
-            Console.SetCursorPosition(2, 14);
-            for (int i = 0; i < strArr.GetLength(1); i++)
-            {
-                Console.Write(strArr[10, i]);
-            }
-            Console.SetCursorPosition(2, 15);
-            for (int i = 0; i < strArr.GetLength(1); i++)
-            {
-                Console.Write(strArr[11, i]);
-            }
-            Console.SetCursorPosition(2, 16);
-            for (int i = 0; i < strArr.GetLength(1); i++)
-            {
-                Console.Write(strArr[12, i]);
-            }
-            Console.SetCursorPosition(2, 17);
-            for (int i = 0; i < strArr.GetLength(1); i++)
-            {
-                Console.Write(strArr[13, i]);
-            }
-            Console.SetCursorPosition(2, 18);
-            for (int i = 0; i < strArr.GetLength(1); i++)
-            {
-                Console.Write(strArr[14, i]);
-            }
-            Console.SetCursorPosition(2, 19);
-            for (int i = 0; i < strArr.GetLength(1); i++)
-            {
-                Console.Write(strArr[15, i]);
-            }
-            Console.SetCursorPosition(2, 20);
-            for (int i = 0; i < strArr.GetLength(1); i++)
-            {
-                Console.Write(strArr[16, i]);
-            }
-            Console.SetCursorPosition(2, 21);
-            for (int i = 0; i < strArr.GetLength(1); i++)
-            {
-                Console.Write(strArr[17, i]);
-            }
-            Console.SetCursorPosition(2,22);
-            for (int i = 0; i < strArr.GetLength(1); i++)
-            {
-                Console.Write(strArr[18, i]);
-            }
-            Console.SetCursorPosition(2, 23);
-            for (int i = 0; i < strArr.GetLength(1); i++)
-            {
-                Console.Write(strArr[19, i]);
-            }
-            Console.SetCursorPosition(2, 24);
-            for (int i = 0; i < strArr.GetLength(1); i++)
-            {
-                Console.Write(strArr[20, i]);
-            }
+
             Console.SetCursorPosition(116,28);
         }
-
+        public static void BuildCharacterInMapArray(string head, string body)
+        {
+            playingField[Movement.Movement.playerPositionY, Movement.Movement.playerPositionX] = head;
+            playingField[Movement.Movement.playerPositionY + 1, Movement.Movement.playerPositionX] = body;
+        }
         public static void BuildFrame()
         {
             string top = " ________________________________________________________________________________________________________________";
@@ -153,6 +96,70 @@ namespace GameConsolePlattform.Map
             {
                 Console.Write(item);
             }
+        }
+
+        public static void OldDrawPlayingField()
+        {
+            //Console.SetCursorPosition(2, 13);
+            //for (int i = 0; i < strArr.GetLength(1); i++)
+            //{
+            //    Console.Write(strArr[9, i]);
+            //}
+            //Console.SetCursorPosition(2, 14);
+            //for (int i = 0; i < strArr.GetLength(1); i++)
+            //{
+            //    Console.Write(strArr[10, i]);
+            //}
+            //Console.SetCursorPosition(2, 15);
+            //for (int i = 0; i < strArr.GetLength(1); i++)
+            //{
+            //    Console.Write(strArr[11, i]);
+            //}
+            //Console.SetCursorPosition(2, 16);
+            //for (int i = 0; i < strArr.GetLength(1); i++)
+            //{
+            //    Console.Write(strArr[12, i]);
+            //}
+            //Console.SetCursorPosition(2, 17);
+            //for (int i = 0; i < strArr.GetLength(1); i++)
+            //{
+            //    Console.Write(strArr[13, i]);
+            //}
+            //Console.SetCursorPosition(2, 18);
+            //for (int i = 0; i < strArr.GetLength(1); i++)
+            //{
+            //    Console.Write(strArr[14, i]);
+            //}
+            //Console.SetCursorPosition(2, 19);
+            //for (int i = 0; i < strArr.GetLength(1); i++)
+            //{
+            //    Console.Write(strArr[15, i]);
+            //}
+            //Console.SetCursorPosition(2, 20);
+            //for (int i = 0; i < strArr.GetLength(1); i++)
+            //{
+            //    Console.Write(strArr[16, i]);
+            //}
+            //Console.SetCursorPosition(2, 21);
+            //for (int i = 0; i < strArr.GetLength(1); i++)
+            //{
+            //    Console.Write(strArr[17, i]);
+            //}
+            //Console.SetCursorPosition(2,22);
+            //for (int i = 0; i < strArr.GetLength(1); i++)
+            //{
+            //    Console.Write(strArr[18, i]);
+            //}
+            //Console.SetCursorPosition(2, 23);
+            //for (int i = 0; i < strArr.GetLength(1); i++)
+            //{
+            //    Console.Write(strArr[19, i]);
+            //}
+            //Console.SetCursorPosition(2, 24);
+            //for (int i = 0; i < strArr.GetLength(1); i++)
+            //{
+            //    Console.Write(strArr[20, i]);
+            //}
         }
     }
 }

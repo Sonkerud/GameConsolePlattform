@@ -7,7 +7,7 @@ namespace GameConsolePlattform.Movement
 {
     public class Movement
     {
-        public static int playerPositionX = 42;
+        public static int playerPositionX = 3;
         public static int playerPositionY = 18;
 
         public static void MoveCharacter()
@@ -40,7 +40,7 @@ namespace GameConsolePlattform.Movement
         {
             var nextPlaceOnPlayingField = Map.Map.playingField[y, x + 1];
 
-            if (nextPlaceOnPlayingField != ".")
+            if (nextPlaceOnPlayingField != "X")
             {
                 Map.Map.playingField[y, x + 1] = Map.Map.playingField[y, x]; // huvud går ett steg höger
                 Map.Map.playingField[y + 1, x + 1] = Map.Map.playingField[y + 1, x]; // kropp går ett steg höger
@@ -55,12 +55,11 @@ namespace GameConsolePlattform.Movement
             MoveCharacter();
         
         }
-
         public static void MoveLeft(int y, int x)
         {
             var nextPlaceOnPlayingField = Map.Map.playingField[y, x - 1];
 
-            if (nextPlaceOnPlayingField != ".")
+            if (nextPlaceOnPlayingField != "X")
             {
                 Map.Map.playingField[y, x - 1] = Map.Map.playingField[y, x];
                 Map.Map.playingField[y + 1, x - 1] = Map.Map.playingField[y + 1, x]; // kropp går ett steg höger
@@ -119,7 +118,7 @@ namespace GameConsolePlattform.Movement
         {
             var nextSquareOnPlayingField = Map.Map.playingField[y +3, x];
             var nextPlaceOnPlayingField = Map.Map.playingField[y +2 , x];
-            if (nextPlaceOnPlayingField != "." && nextPlaceOnPlayingField != "T" && nextSquareOnPlayingField != "." && nextSquareOnPlayingField != "T" && nextSquareOnPlayingField != "O" && nextPlaceOnPlayingField != "O")
+            if (nextPlaceOnPlayingField != "X" && nextPlaceOnPlayingField != "T" && nextSquareOnPlayingField != "X" && nextSquareOnPlayingField != "T" && nextSquareOnPlayingField != "O" && nextPlaceOnPlayingField != "O")
             {
                 Map.Map.playingField[y + 3, x] = Map.Map.playingField[y + 1, x]; // tom ruta blir kropp
                 Map.Map.playingField[y + 2, x] = Map.Map.playingField[y, x];  // kropp blir huvud
@@ -135,7 +134,7 @@ namespace GameConsolePlattform.Movement
         {
             var nextSquareOnPlayingField = Map.Map.playingField[y + 3, x];
             var nextPlaceOnPlayingField = Map.Map.playingField[y + 2, x];
-            if (nextPlaceOnPlayingField != "." && nextPlaceOnPlayingField != "T" && nextSquareOnPlayingField != "." && nextSquareOnPlayingField != "T" && nextPlaceOnPlayingField != "O" && nextSquareOnPlayingField != "O")
+            if (nextPlaceOnPlayingField != "X" && nextPlaceOnPlayingField != "T" && nextSquareOnPlayingField != "X" && nextSquareOnPlayingField != "T" && nextPlaceOnPlayingField != "O" && nextSquareOnPlayingField != "O")
             {
                 Map.Map.playingField[y + 3, x] = Map.Map.playingField[y + 1, x]; // tom ruta blir kropp
                 Map.Map.playingField[y + 2, x] = Map.Map.playingField[y, x];  // kropp blir huvud
@@ -145,7 +144,7 @@ namespace GameConsolePlattform.Movement
                 Map.Map.DrawPlayingField(Map.Map.playingField);
             }
 
-            else if (nextPlaceOnPlayingField != "." && nextPlaceOnPlayingField != "T" && nextPlaceOnPlayingField != "O")
+            else if (nextPlaceOnPlayingField != "X" && nextPlaceOnPlayingField != "T" && nextPlaceOnPlayingField != "O")
             {
                 Map.Map.playingField[y + 2, x] = Map.Map.playingField[y + 1, x]; // tom ruta blir kropp
                 Map.Map.playingField[y + 1, x] = Map.Map.playingField[y, x];  // kropp blir huvud

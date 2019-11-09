@@ -5,29 +5,23 @@ namespace GameConsolePlattform
 {
     class Program
     {
-        private static object tread;
+       static PlayerModel.PlayerProcessor playerProcessor = new PlayerModel.PlayerProcessor();
 
         static void Main(string[] args)
         {
             Map.Map.BuildFrame();
-            //Map.Map.BuildGround();
-            Map.Map.BuildPlayingfield();
+            var player = playerProcessor.CreatePlayer();
+
+            Map.PlayerInfoOnMap.ShowPlayerNameOnMap(player.Name);
+            Map.Map.BuildPlayingfield(player.Head, player.Body);
             Map.Map.DrawPlayingField(Map.Map.playingField);
+           
+            
             while (true)
             {
-
-                
-                    Movement.Movement.MoveCharacter();
-               
-                
+                Movement.Movement.MoveCharacter();
                 Thread.Sleep(100);
             }
-         
-            //Player.Character.CreateCharacter();
-            //Player.Character.DrawCharacter(40,21);
-
-
-
             Console.ReadLine();
         }
     }

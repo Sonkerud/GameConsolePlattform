@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GameConsolePlattform.Player
+namespace GameConsolePlattform.PlayerModel
 {
     public class Character
     {
